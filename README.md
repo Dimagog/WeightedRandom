@@ -33,14 +33,14 @@ Fractional weights support can be added with few modifications to the Alias algo
 
 ### When you simply need indices of the weights
 
-```
+```crystal
 r = WeightedRandom.new([1, 2])
 r.next_choice
 ```
 The `next_choice` above will randomly generate `0`s and `1`s. `1`s will be twice more likely than `0`s.
 
 A common case is when weights are percentages:
-```
+```crystal
 r = WeightedRandom.new([5, 70, 25])
 r.next_choice
 ```
@@ -49,7 +49,7 @@ Here 5% of calls to `next_choice` will return `0`, 70% will return `1`, and 25% 
 To be explicit that you are creating an indexed choice you can use `WeightedRandom.indexed` instead of `WeightedRandom.new`.
 
 ### When weights have labels
-```
+```crystal
 r = WeightedRandom.new({"a" => 1, "b" => 2})
 r.next_choice
 ```
